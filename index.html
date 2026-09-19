@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darshan Dale — Data Analyst Portfolio</title>
+<meta name="description" content="Darshan Dale — Data Analyst, Business Analytics, Information Technology Engineer. Projects, skills, and experience.">
+<meta name="author" content="Darshan Dale">
+<meta name="theme-color" content="#F7F7F2" id="themeColorMeta">
+<link rel="canonical" href="PLACEHOLDER_SITE_URL">
+
+<!-- ===== Open Graph (LinkedIn, WhatsApp, Facebook previews) ===== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darshan Dale — Portfolio">
+<meta property="og:title" content="Darshan Dale — Data Analyst Portfolio">
+<meta property="og:description" content="Data analyst and final-year IT engineer. Python, SQL, Power BI. Projects in property valuation, hospital analytics, and automation.">
+<meta property="og:url" content="PLACEHOLDER_SITE_URL">
+<meta property="og:image" content="PLACEHOLDER_SITE_URL/images/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Darshan Dale — Data Analyst Portfolio">
+<meta property="og:locale" content="en_IN">
+
+<!-- ===== Twitter / X card ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Darshan Dale — Data Analyst Portfolio">
+<meta name="twitter:description" content="Data analyst and final-year IT engineer. Python, SQL, Power BI. Projects in property valuation, hospital analytics, and automation.">
+<meta name="twitter:image" content="PLACEHOLDER_SITE_URL/images/og-cover.png">
+<meta name="twitter:image:alt" content="Darshan Dale — Data Analyst Portfolio">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- ===== Structured data for Google ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Darshan Dale",
+  "jobTitle": "Data Analyst",
+  "email": "mailto:darshandaleworks@gmail.com",
+  "url": "PLACEHOLDER_SITE_URL",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Nashik",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Savitribai Phule Pune University"
+  },
+  "knowsAbout": ["Data Analysis", "Business Analytics", "Python", "SQL", "Pandas", "Power BI", "Excel", "Data Visualization"],
+  "sameAs": [
+    "https://github.com/darshandale",
+    "https://www.linkedin.com/in/darshan-dale"
+  ]
+}
+</script>
+
+<!-- Sets the saved theme before the page paints, so there is no white flash in dark mode -->
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
+
+<style>
+
+/* ============ 1. RESET & VARIABLES ============ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+img { max-width: 100%; display: block; }
+ul { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+:root {
+  /* Paper / data-sheet palette (light) */
+  --bg:        #F7F7F2;
+  --bg-panel:  #EFEFE7;
+  --ink:       #1A1F2B;
+  --ink-soft:  #545C6B;
+  --ink-faint: #8A8F99;
+  --line:      #D8D8CE;
+  --accent:    #0E7C7B;   /* signal teal */
+  --accent-2:  #C9962C;   /* muted gold, used only in the gradient sweep */
+  --accent-ink:#ffffff;
+  --radius:    4px;
+  --nav-w:     232px;
+  --max-w:     700px;
+  --shadow:    0 1px 0 var(--line);
+  color-scheme: light;
+}
+
+/* Dark theme — same design, inverted paper */
+[data-theme="dark"] {
+  --bg:        #14161B;
+  --bg-panel:  #1C1F26;
+  --ink:       #F0F0EA;
+  --ink-soft:  #A9AFBA;
+  --ink-faint: #757C88;
+  --line:      #2A2E37;
+  --accent:    #3FBFBB;
+  --accent-2:  #D9A94A;
+  --accent-ink:#14161B;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.mono {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 10px 16px;
+  z-index: 200;
+  border-radius: 0 0 var(--radius) 0;
+}
+.skip-link:focus { left: 0; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ============ 1b. THEME TOGGLE ============ */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 150;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  background: var(--bg-panel);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  transition: border-color .15s ease, color .15s ease, transform .15s ease, background .15s ease;
+}
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+.theme-toggle svg { width: 16px; height: 16px; display: block; }
+.theme-toggle .icon-sun { display: none; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* ============ 2. NAV ============ */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: var(--nav-w);
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--bg);
+  border-right: 1px solid var(--line);
+  z-index: 100;
+}
+.nav-brand {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.nav-brand span {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-top: 4px;
+}
+.nav-list { margin-top: 48px; }
+.nav-list li + li { margin-top: 2px; }
+.nav-list a {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  border-left: 2px solid transparent;
+  padding-left: 12px;
+  margin-left: -12px;
+  transition: color .15s ease, border-color .15s ease;
+}
+.nav-list a .idx {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--ink-faint);
+  width: 16px;
+}
+.nav-list a:hover,
+.nav-list a:focus-visible { color: var(--ink); }
+.nav-list a.is-active {
+  color: var(--ink);
+  border-left-color: var(--accent);
+  font-weight: 500;
+}
+.nav-foot {
+  display: flex;
+  gap: 14px;
+}
+.nav-foot a {
+  color: var(--ink-faint);
+  transition: color .15s ease;
+}
+.nav-foot a:hover, .nav-foot a:focus-visible { color: var(--accent); }
+.nav-foot svg { width: 18px; height: 18px; display: block; }
+
+/* ============ 3. LAYOUT ============ */
+main { margin-left: var(--nav-w); }
+.section {
+  padding: 96px 48px;
+  max-width: calc(var(--max-w) + 96px);
+}
+.section-inner { max-width: var(--max-w); }
+.section + .section { border-top: 1px solid var(--line); }
+.row-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--accent);
+  margin-bottom: 14px;
+  display: block;
+}
+.section h2 { font-size: clamp(1.5rem, 1.2rem + 1vw, 1.9rem); margin-bottom: 22px; }
+.section p { color: var(--ink-soft); max-width: 62ch; }
+
+/* ============ 4. HERO ============ */
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-inner { max-width: 620px; position: relative; }
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 28px;
+  animation: float 6s ease-in-out infinite;
+}
+.hero-eyebrow .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent);
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 1.8rem + 3vw, 4.1rem);
+  color: var(--ink);
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero h1 {
+    background: linear-gradient(100deg, var(--ink) 30%, var(--accent) 48%, var(--accent-2) 56%, var(--ink) 74%);
+    background-size: 260% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: sweep 9s ease-in-out infinite;
+  }
+}
+.hero-role {
+  margin-top: 16px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(0.9rem, 0.8rem + 0.3vw, 1.05rem);
+  color: var(--ink-soft);
+}
+.hero-role .sep { color: var(--ink-faint); margin: 0 8px; }
+.hero-intro {
+  margin-top: 24px;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 46ch;
+}
+.hero-actions {
+  margin-top: 38px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  font-weight: 500;
+  border: 1px solid var(--ink);
+  transition: transform .15s ease, background .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+.btn-primary:hover, .btn-primary:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 0 rgba(26,31,43,0.12);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+.btn-ghost:hover, .btn-ghost:focus-visible {
+  border-color: var(--ink);
+  transform: translateY(-2px);
+}
+.btn svg { width: 16px; height: 16px; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* ============ 5. REVEAL ============ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============ 6. ABOUT ============ */
+.fact-strip {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.fact {
+  padding: 18px 20px;
+  background: var(--bg);
+}
+.fact + .fact { border-left: 1px solid var(--line); }
+.fact .k {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--ink-faint);
+  display: block;
+  margin-bottom: 6px;
+}
+.fact .v { font-size: 0.92rem; font-weight: 500; }
+
+/* ============ 7. SKILLS ============ */
+.skill-groups { margin-top: 8px; }
+.skill-group {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 18px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  align-items: baseline;
+}
+.skill-group:last-child { border-bottom: 1px solid var(--line); }
+.skill-group .label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.76rem;
+  color: var(--ink-faint);
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tag {
+  font-size: 0.86rem;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-panel);
+  transition: border-color .15s ease, transform .15s ease;
+}
+.skill-tag:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+/* ============ 8. PROJECTS ============ */
+.project {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  background: var(--bg);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.project + .project { margin-top: 20px; }
+.project:hover {
+  border-color: var(--ink);
+  box-shadow: 4px 4px 0 0 var(--line);
+}
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.project-head h3 { font-size: 1.15rem; }
+.project-links { display: flex; gap: 10px; flex-shrink: 0; }
+.project-links a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.76rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+  transition: color .15s ease, border-color .15s ease;
+}
+.project-links a:hover, .project-links a:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.project-links svg { width: 13px; height: 13px; }
+.project p.desc {
+  margin: 12px 0 14px;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.project p.case {
+  margin: 0 0 18px;
+  padding-left: 14px;
+  border-left: 2px solid var(--line);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.metric-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  border-top: 1px dashed var(--line);
+  padding-top: 16px;
+}
+.metric {
+  font-size: 0.82rem;
+}
+.metric .k {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--ink-faint);
+  margin-right: 6px;
+}
+.metric .v { font-weight: 500; }
+
+/* ============ 9. EXPERIENCE / EDUCATION ============ */
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+.timeline-entry:last-child { border-bottom: 1px solid var(--line); }
+.timeline-entry .when {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  padding-top: 3px;
+}
+.timeline-entry h3 { font-size: 1.05rem; }
+.timeline-entry .org { color: var(--ink-soft); font-size: 0.92rem; margin-top: 2px; }
+.timeline-entry ul { margin-top: 12px; }
+.timeline-entry li {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  padding-left: 16px;
+  position: relative;
+  margin-top: 6px;
+}
+.timeline-entry li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 9px;
+  width: 5px; height: 5px;
+  background: var(--accent);
+}
+
+/* ============ 10. DASHBOARDS ============ */
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 8px;
+}
+.dash-figure { margin: 0; }
+.dash-shot {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-panel);
+  transition: border-color .2s ease;
+}
+.dash-shot:hover { border-color: var(--accent); }
+.dash-caption {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin: 8px 0 0;
+}
+
+/* ============ 11. RESUME / CONTACT ============ */
+.resume-panel, .contact-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  background: var(--bg-panel);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.resume-panel p, .contact-panel p { margin: 4px 0 0; }
+.contact-list { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+.contact-card {
+  flex: 1 1 160px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.contact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.contact-card svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); }
+.contact-card .t { font-size: 0.72rem; color: var(--ink-faint); font-family: 'IBM Plex Mono', monospace; display: block; }
+.contact-card .v { font-size: 0.88rem; font-weight: 500; word-break: break-word; }
+
+/* ============ 12. FOOTER ============ */
+footer {
+  padding: 32px 48px 48px;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ============ 13. ANIMATIONS ============ */
+@keyframes sweep {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ============ 14. RESPONSIVE ============ */
+@media (max-width: 900px) {
+  :root { --nav-w: 0px; }
+  .site-nav {
+    position: sticky;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 20px;
+    padding-right: 68px;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    overflow: visible;
+    gap: 16px;
+  }
+  .nav-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    min-width: 0;
+  }
+  .nav-brand { flex-shrink: 0; }
+  .nav-brand span { display: none; }
+  .nav-list {
+    margin-top: 0;
+    display: flex;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-list::-webkit-scrollbar { display: none; }
+  .nav-list li + li { margin-top: 0; }
+  .nav-list a {
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    padding: 6px 10px;
+    margin-left: 0;
+  }
+  .nav-list a.is-active { border-left-color: transparent; border-bottom-color: var(--accent); }
+  .nav-foot { display: none; }
+  main { margin-left: 0; }
+  .section { padding: 64px 24px; }
+  .hero { padding: 40px 24px; min-height: auto; }
+  .fact-strip, .dash-grid { grid-template-columns: 1fr; }
+  .fact + .fact { border-left: none; border-top: 1px solid var(--line); }
+  .skill-group { grid-template-columns: 1fr; gap: 8px; }
+  .timeline-entry { grid-template-columns: 1fr; gap: 6px; }
+  .theme-toggle { top: 12px; right: 14px; padding: 9px; }
+  .theme-toggle .label { display: none; }
+}
+
+/* ============ 15. REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero h1 { animation: none; background-position: 0% 50%; }
+  .hero-eyebrow { animation: none; }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .btn, .project, .contact-card, .skill-tag, .dash-shot, .nav-list a, .theme-toggle, body {
+    transition: none !important;
+  }
+  .btn-primary:hover, .btn-ghost:hover, .project:hover, .contact-card:hover, .skill-tag:hover, .theme-toggle:hover {
+    transform: none !important;
+  }
+}
+
+/* ============ 16. PRINT ============ */
+@media print {
+  :root, [data-theme="dark"] {
+    --bg: #ffffff;
+    --bg-panel: #ffffff;
+    --ink: #000000;
+    --ink-soft: #222222;
+    --ink-faint: #555555;
+    --line: #bbbbbb;
+    --accent: #000000;
+    --accent-2: #000000;
+  }
+  .site-nav, .theme-toggle, .skip-link, .hero-actions, .nav-foot { display: none !important; }
+  body {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #000000;
+    font-size: 11pt;
+  }
+  main { margin-left: 0; }
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero, .section { padding: 18px 0; max-width: none; min-height: 0; break-inside: avoid; }
+  .hero h1 {
+    background: none !important;
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    animation: none !important;
+  }
+  .hero-eyebrow { animation: none !important; }
+  .project, .contact-card, .timeline-entry, .dash-figure { break-inside: avoid; }
+  a[href^="http"]::after,
+  a[href^="mailto"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #555555;
+    word-break: break-all;
+  }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
+  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <span class="label" id="themeLabel">Dark</span>
+</button>
+
+<nav class="site-nav" aria-label="Section navigation">
+  <div class="nav-top">
+    <a href="#home" class="nav-brand">Darshan Dale<span>Data Analyst Portfolio</span></a>
+    <ul class="nav-list">
+      <li><a href="#home"><span class="idx mono">01</span>Home</a></li>
+      <li><a href="#about"><span class="idx mono">02</span>About</a></li>
+      <li><a href="#skills"><span class="idx mono">03</span>Skills</a></li>
+      <li><a href="#projects"><span class="idx mono">04</span>Projects</a></li>
+      <li><a href="#experience"><span class="idx mono">05</span>Experience</a></li>
+      <li><a href="#education"><span class="idx mono">06</span>Education</a></li>
+      <li><a href="#certifications"><span class="idx mono">07</span>Certifications</a></li>
+      <li><a href="#dashboards"><span class="idx mono">08</span>Dashboards</a></li>
+      <li><a href="#resume"><span class="idx mono">09</span>Resume</a></li>
+      <li><a href="#contact"><span class="idx mono">10</span>Contact</a></li>
+    </ul>
+  </div>
+  <div class="nav-foot">
+    <a href="https://github.com/darshandale" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.9-2.78.51-3.5-.7-3.72-1.34-.13-.34-.68-1.34-1.16-1.62-.4-.22-.97-.75-.01-.77.9-.01 1.54.85 1.76 1.2 1.03 1.76 2.68 1.26 3.33.96.1-.76.4-1.26.73-1.55-2.55-.3-5.23-1.32-5.23-5.83 0-1.29.45-2.34 1.18-3.17-.12-.3-.51-1.52.11-3.16 0 0 .97-.32 3.18 1.21a10.7 10.7 0 0 1 5.79 0c2.2-1.53 3.17-1.2 3.17-1.2.63 1.63.24 2.85.12 3.15.74.83 1.18 1.87 1.18 3.17 0 4.52-2.69 5.52-5.25 5.82.42.37.78 1.1.78 2.22 0 1.6-.01 2.9-.01 3.29 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2Z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/darshan-dale" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.4 8.75h3.48V21H3.4V8.75Zm6.2 0h3.34v1.68h.05c.47-.87 1.6-1.79 3.3-1.79 3.53 0 4.18 2.28 4.18 5.25V21h-3.48v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.45-2.16 2.96V21H9.6V8.75Z"/></svg>
+    </a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <span class="hero-eyebrow"><span class="dot"></span>Final-year IT engineer · Open To Work </span>
+      <h1>Darshan Dale</h1>
+      <p class="hero-role">Data Analyst<span class="sep">|</span>Business Analytics<span class="sep">|</span>Information Technology Engineer</p>
+      <p class="hero-intro">I turn spreadsheets and raw datasets into decisions — models, dashboards, and the occasional automation script in between. Currently finishing my IT engineering degree while building a data analytics portfolio from real problems.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">
+          View projects
+        </a>
+        <a class="btn btn-ghost" href="resume.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Download resume
+        </a>
+        <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+          View resume
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/darshandale" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/darshan-dale" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about">
+    <div class="section-inner" data-reveal>
+      <span class="row-label">02 — About</span>
+      <h2>Turning messy data into things people can act on</h2>
+      <p>I'm a final-year Information Technology engineering student with a growing specialty in data analytics and business analytics. Most of my time goes into pulling structure out of messy data — cleaning it, modelling it, and putting the results in front of people who need to make a decision.</p>
+      <p style="margin-top: 14px;">Comfortable across the full loop: Python and SQL for the heavy lifting, Excel and Power BI for the parts stakeholders actually look at.</p>
+
+      <div class="fact-strip">
+        <div class="fact"><span class="k mono">EDUCATION</span><span class="v">B.E. Information Technology, Final Year</span></div>
+        <div class="fact"><span class="k mono">BASED IN</span><span class="v">Nashik, Maharashtra, India</span></div>
+        <div class="fact"><span class="k mono">FOCUS</span><span class="v">Data &amp; Business Analytics</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="section" id="skills">
+    <div class="section-inner" data-reveal>
+      <span class="row-label">03 — Skills</span>
+      <h2>Toolkit</h2>
+      <div class="skill-groups">
+        <div class="skill-group">
+          <span class="label mono">LANGUAGES</span>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL / MySQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="label mono">ANALYSIS</span>
+          <div class="skill-tags">
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Statistics</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="label mono">VISUALIZATION &amp; BI</span>
+          <div class="skill-tags">
+            <span class="skill-tag">Excel</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Data Visualization</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="label mono">TOOLING</span>
+          <div class="skill-tags">
+            <span class="skill-tag">Git / GitHub</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <div data-reveal>
+        <span class="row-label">04 — Featured projects</span>
+        <h2>Things I've built</h2>
+      </div>
+
+      <div style="margin-top: 32px;">
+        <article class="project" data-reveal style="--i:1">
+          <div class="project-head">
+            <h3>RentalIQ — Property Valuation &amp; Deal Assessment Engine</h3>
+            <div class="project-links">
+              <a href="https://rentaliq-demo.streamlit.app/" target="_blank" rel="noopener">Live app
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+              <a href="https://github.com/darshandale/RentalIQ-valuation-engine" target="_blank" rel="noopener noreferrer">GitHub
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="desc">A property valuation and deal-assessment engine trained on rental listings — estimates fair rental value and flags over- or under-priced deals.</p>
+          <p class="case">Renters and small landlords have no easy way to tell whether an asking rent is fair, so listings get judged on gut feel. I cleaned 4,700+ real-world rental listings, engineered key features (BHK configuration, square footage, locality score, furnishing status), and trained a Random Forest regressor with an 80/20 train-test split.<br>The model explains 84% (R² = 0.84) of the variance in rent, and location/square footage emerged as the primary price drivers, deployed directly as an interactive Streamlit tool.</p>
+          <div class="metric-row">
+            <span class="metric"><span class="k mono">RECORDS</span><span class="v">4,700+</span></span>
+            <span class="metric"><span class="k mono">MODEL</span><span class="v">Random Forest</span></span>
+            <span class="metric"><span class="k mono">R²</span><span class="v">0.84</span></span>
+            <span class="metric"><span class="k mono">SPLIT</span><span class="v">80/20</span></span>
+            <span class="metric"><span class="k mono">STACK</span><span class="v">Python, Pandas, Scikit-learn</span></span>
+            <span class="metric"><span class="k mono">INTERFACE</span><span class="v">Streamlit</span></span>
+          </div>
+        </article>
+
+        <article class="project" data-reveal style="--i:2">
+          <div class="project-head">
+            <h3>Hospital Analytics Dashboard</h3>
+            <div class="project-links">
+              <a href="https://github.com/darshandale/Hospital-Analytics-Dashboard" target="_blank" rel="noopener noreferrer">GitHub
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="desc">An Excel-based operational dashboard analyzing hospital workflow efficiency and patient satisfaction from raw operational records.</p>
+          <p class="case">Hospital administrative records lacked consolidated visibility into department performance and bottlenecks. I cleaned and structured over 1,000+ patient and department logs, standardized operational KPIs, and built dynamic pivot-driven views analyzing wait times, bed occupancy, and satisfaction ratings.<br>Identified emergency and outpatient bottlenecks as the primary source of lower satisfaction scores, recommending scheduling adjustments to lower peak wait times.</p>
+          <div class="metric-row">
+            <span class="metric"><span class="k mono">TOOLING</span><span class="v">Excel</span></span>
+            <span class="metric"><span class="k mono">RECORDS ANALYSED</span><span class="v">1,000+ Records</span></span>
+            <span class="metric"><span class="k mono">PROCESS</span><span class="v">Data cleaning, pivot tables &amp; charts</span></span>
+            <span class="metric"><span class="k mono">OUTPUT</span><span class="v">Operational KPI &amp; satisfaction report</span></span>
+          </div>
+        </article>
+
+        <article class="project" data-reveal style="--i:3">
+          <div class="project-head">
+            <h3>AI Voice / Task Assistant</h3>
+            <div class="project-links">
+              <a href="https://github.com/darshandale/AI-Voice-Assistant" target="_blank" rel="noopener noreferrer">GitHub
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="desc">A desktop automation engine built in Python that automates repetitive workflows hands-free via spoken natural language commands.</p>
+          <p class="case">Repetitive desktop lookups and workflow tasks frequently interrupted deep focus. Built a modular voice listener mapping natural audio inputs to automated system actions using speech recognition, web automation, and operating system API calls.<br>Handles web searches, application triggers, and media playback seamlessly, cutting repetitive clicking and desktop context-switching.</p>
+          <div class="metric-row">
+            <span class="metric"><span class="k mono">STACK</span><span class="v">Python, SpeechRecognition, Pyttsx3</span></span>
+            <span class="metric"><span class="k mono">FOCUS</span><span class="v">Workflow Automation</span></span>
+            <span class="metric"><span class="k mono">TASKS</span><span class="v">Automated Search, App Launches &amp; System Controls</span></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section class="section" id="experience">
+    <div class="section-inner" data-reveal>
+      <span class="row-label">05 — Experience</span>
+      <h2>Where I've worked</h2>
+      <div class="timeline-entry">
+        <span class="when mono">Jan 2026 – Mar 2026</span>
+        <div>
+          <h3>Data Science Intern</h3>
+          <p class="org">Skymind IT Training and Solutions</p>
+          <ul>
+            <li>Performed data cleaning, EDA, and statistical analysis using Python, Pandas, and Excel on real-world datasets, including property and rental-price data. Built visualizations to identify trends, patterns, and the key factors affecting rental prices.</li>
+            <li>Outcome: delivered structured analysis and visual insights demonstrating practical data analytics and problem-solving skills.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section class="section" id="education">
+    <div class="section-inner" data-reveal>
+      <span class="row-label">06 — Education</span>
+      <h2>Where I studied</h2>
+      <div class="timeline-entry">
+        <span class="when mono">2024 – 2027</span>
+        <div>
+          <h3>Bachelor of Engineering (B.E.) in Information Technology</h3>
+          <p class="org">Savitribai Phule Pune University (SPPU)</p>
+          <ul>
+            <li>Status: Final Year Student</li>
+            <li>Relevant coursework: Database Management Systems (DBMS), Data Structures &amp; Algorithms, Big Data Analytics, Software Engineering, Business Intelligence.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATIONS ================= -->
+  <section class="section" id="certifications">
+    <div class="section-inner" data-reveal>
+      <span class="row-label">07 — Certifications</span>
+      <h2>Credentials &amp; learning</h2>
+      <div class="timeline-entry">
+        <span class="when mono">Professional</span>
+        <div>
+          <h3>Google Data Analytics Professional Certificate</h3>
+          <p class="org">Coursera / Google</p>
+          <ul>
+            <li>Comprehensive training covering data cleaning, analysis, SQL queries, R programming, spreadsheets, and Tableau data visualization for business decision-making.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <span class="when mono">Coursework</span>
+        <div>
+          <h3> Generative AI for Data Analysts Specialization– IBM/Coursera </h3>
+          <p class="org">Specialized Program</p>
+          <ul>
+            <li>Mastered generative AI workflows and prompt engineering to accelerate data preparation, synthetic data generation, and complex SQL querying across analytical pipelines.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DASHBOARDS ================= -->
+  <section class="section" id="dashboards">
+    <div class="section-inner" data-reveal>
+      <span class="row-label">08 — Dashboards &amp; analytics</span>
+      <h2>A closer look</h2>
+      <p>Screenshots and embedded Power BI views from the projects above.</p>
+
+      <div class="dash-grid">
+        <figure class="dash-figure">
+          <img class="dash-shot" src="images/rentaliq-dashboard.png" alt="RentalIQ app showing predicted rent next to the listed asking price" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption class="dash-caption">RentalIQ — predicted vs listed rent</figcaption>
+        </figure>
+        <figure class="dash-figure">
+          <img class="dash-shot" src="images/hospital-dashboard.png" alt="Excel dashboard showing patient satisfaction by department and average wait time" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption class="dash-caption">Hospital analytics — satisfaction by department</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESUME ================= -->
+  <section class="section" id="resume">
+    <div class="section-inner" data-reveal>
+      <span class="row-label">09 — Resume</span>
+      <div class="resume-panel">
+        <div>
+          <h3>Full resume, one click away</h3>
+          <p style="color: var(--ink-soft); font-size: 0.92rem;">Two-column PDF — education, certifications, and project detail.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="resume.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            Download resume
+          </a>
+          <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+            View resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section" id="contact">
+    <div class="section-inner" data-reveal>
+      <span class="row-label">10 — Contact</span>
+      <h2>Let's talk</h2>
+      <p>Open to data analyst and business analytics internships and entry-level roles. The fastest way to reach me is email.</p>
+      <div class="contact-list">
+        <a class="contact-card" href="mailto:darshandaleworks@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <div><span class="t">EMAIL</span><span class="v">darshandaleworks@gmail.com</span></div>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/darshan-dale" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.4 8.75h3.48V21H3.4V8.75Zm6.2 0h3.34v1.68h.05c.47-.87 1.6-1.79 3.3-1.79 3.53 0 4.18 2.28 4.18 5.25V21h-3.48v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.45-2.16 2.96V21H9.6V8.75Z"/></svg>
+          <div><span class="t">LINKEDIN</span><span class="v">/in/darshan-dale</span></div>
+        </a>
+        <a class="contact-card" href="https://github.com/darshandale" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.9-2.78.51-3.5-.7-3.72-1.34-.13-.34-.68-1.34-1.16-1.62-.4-.22-.97-.75-.01-.77.9-.01 1.54.85 1.76 1.2 1.03 1.76 2.68 1.26 3.33.96.1-.76.4-1.26.73-1.55-2.55-.3-5.23-1.32-5.23-5.83 0-1.29.45-2.34 1.18-3.17-.12-.3-.51-1.52.11-3.16 0 0 .97-.32 3.18 1.21a10.7 10.7 0 0 1 5.79 0c2.2-1.53 3.17-1.2 3.17-1.2.63 1.63.24 2.85.12 3.15.74.83 1.18 1.87 1.18 3.17 0 4.52-2.69 5.52-5.25 5.82.42.37.78 1.1.78 2.22 0 1.6-.01 2.9-.01 3.29 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2Z"/></svg>
+          <div><span class="t">GITHUB</span><span class="v">github.com/darshandale</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Darshan Dale — <span id="year"></span></span>
+    <span>Built with HTML, CSS &amp; a little JavaScript.</span>
+  </footer>
+</main>
+
+<script>
+(function () {
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Theme toggle ---------- */
+  var root      = document.documentElement;
+  var toggle    = document.getElementById('themeToggle');
+  var label     = document.getElementById('themeLabel');
+  var metaColor = document.getElementById('themeColorMeta');
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    var goingTo = theme === 'dark' ? 'light' : 'dark';
+    label.textContent = theme === 'dark' ? 'Light' : 'Dark';
+    toggle.setAttribute('aria-label', 'Switch to ' + goingTo + ' theme');
+    toggle.setAttribute('title', 'Switch to ' + goingTo + ' theme');
+    if (metaColor) metaColor.setAttribute('content', theme === 'dark' ? '#14161B' : '#F7F7F2');
+  }
+
+  applyTheme(root.getAttribute('data-theme') || 'light');
+
+  toggle.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Reveal on scroll ---------- */
+  var revealEls = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* ---------- Scrollspy ---------- */
+  var sections = document.querySelectorAll('main section[id]');
+  var navLinks = document.querySelectorAll('.nav-list a');
+
+  function setActive(id) {
+    navLinks.forEach(function (link) {
+      var on = link.getAttribute('href') === '#' + id;
+      link.classList.toggle('is-active', on);
+      if (on) {
+        link.setAttribute('aria-current', 'true');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  setActive((window.location.hash || '#home').slice(1));
+
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>
